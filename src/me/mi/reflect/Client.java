@@ -22,46 +22,46 @@ public class Client {
 		    Person p = new Person();
 		    Class clazz3 = p.getClass();
 		}
-		//Í¨¹ıÎŞ²ÎÊıµÄ¹¹ÔìÆ÷À´´´½¨¶ÔÏó
+		//é€šè¿‡æ— å‚æ•°çš„æ„é€ å™¨æ¥åˆ›å»ºå¯¹è±¡
 		{
-		    //1. »ñÈ¡×Ö½ÚÂë
+		    //1. è·å–å­—èŠ‚ç 
 		    Class clazz1 = Class.forName("me.mi.reflect.Person");
-		    //2. Í¨¹ı×Ö½ÚÂë´´½¨¶ÔÏó
+		    //2. é€šè¿‡å­—èŠ‚ç åˆ›å»ºå¯¹è±¡
 		    Person p = (Person) clazz1.newInstance();
 		    p.name = "zhangsan";
 		    p.age = 10;
 		    p.show();
 		}
-		//Í¨¹ıÓĞ²ÎÊıµÄ¹¹ÔìÆ÷À´´´½¨¶ÔÏó
+		//é€šè¿‡æœ‰å‚æ•°çš„æ„é€ å™¨æ¥åˆ›å»ºå¯¹è±¡
 		{
-		    //1.»ñÈ¡×Ö½ÚÂë
+		    //1.è·å–å­—èŠ‚ç 
 		    Class clazz1 = Class.forName("me.mi.reflect.Person");
-		    //2.»ñÈ¡¹¹ÔìÆ÷
-		    Constructor c = clazz1.getConstructor(String.class, Integer.class);
-		    //3.Í¨¹ı¹¹ÔìÆ÷À´´´½¨¶ÔÏó
+		    //2.è·å–æ„é€ å™¨
+		    Constructor c = clazz1.getConstructor(String.class, int.class);
+		    //3.é€šè¿‡æ„é€ å™¨æ¥åˆ›å»ºå¯¹è±¡
 		    Person p = (Person) c.newInstance("luban", 7);
 		    p.show();
 		
-		    //»ñÈ¡¹«¹²µÄ×Ö¶Î
+		    //è·å–å…¬å…±çš„å­—æ®µ
 		    {
 		        Field f = clazz1.getField("name");
 		        f.set(p, "libai");
 		        p.show();
 		    }
-		    //»ñÈ¡Ë½ÓĞ×Ö¶Î
+		    //è·å–ç§æœ‰å­—æ®µ
 		    {
 		        Field f = clazz1.getDeclaredField("gender");
-		        //È¥³ıË½ÓĞÈ¨ÏŞ
+		        //å»é™¤ç§æœ‰æƒé™
 		        f.setAccessible(true);
 		        f.set(p, "male");
 		        p.show();
 		    }
-		    //»ñÈ¡¹«¹²·½·¨,²¢Ö´ĞĞ
+		    //è·å–å…¬å…±æ–¹æ³•,å¹¶æ‰§è¡Œ
 		    {
 		        Method m = clazz1.getMethod("show");
 		        m.invoke(p);
 		    }
-		    //»ñÈ¡Ë½ÓĞ·½·¨,²¢Ö´ĞĞ
+		    //è·å–ç§æœ‰æ–¹æ³•,å¹¶æ‰§è¡Œ
 		    {
 		        Method m = clazz1.getDeclaredMethod("eat", String.class);
 		        m.setAccessible(true);
@@ -69,7 +69,7 @@ public class Client {
 		    }
 		
 		}
-		//ÈÆ¹ı±àÒëÆ÷¼ì²â ÔÚÁĞ±íÖĞ¼ÓÈëÈÎºÎÀàĞÍÊı¾İ
+		//ç»•è¿‡ç¼–è¯‘å™¨æ£€æµ‹ åœ¨åˆ—è¡¨ä¸­åŠ å…¥ä»»ä½•ç±»å‹æ•°æ®
 		{
 		    ArrayList<Integer> list = new ArrayList<>();
 		    list.add(1);

@@ -2,13 +2,13 @@ package me.mi.reflect;
 
 public class Person {
 	public String name;
-    public Integer age;
+    public int age;
     private String gender;
 
     public Person() {
     }
 
-    public Person(String name, Integer age) {
+    public Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
